@@ -1,0 +1,198 @@
+---
+title: "Tarea 3"
+author: "[indique su correo, sin corchetes]"
+output:
+  html_document
+---
+
+
+---
+
+# Instrucciones
+
+- La siguiente tarea contiene una serie de ejercicios donde se requiere generar los resultados de un instrumento compuesto por varias preguntas, hacer un análisis de un modelo de regresión simple, graficar los resultados y finalmente, comparar los resultados con un modelo de regresión con variables estandarizadas.
+
+- Vamos a emplear una base de datos sobre motivación laboral.
+
+- El archivo que contiene los datos que vamos a emplear ya esta cargado en el proyecto en posit y se llama:
+
+```
+
+base_motivacion_laboral.csv
+
+```
+
+- El libro de codigos de la base de datos que vamos a emplear, se llama:
+
+```
+
+base_motivacion_laboral_codebook.xlsx
+
+```
+
+
+---
+
+# Tarea 03
+
+
+## Ejercicio 1. Abrir los datos.
+
+- Abra los datos `base_motivacion_laboral.csv`, empleando la función `read.csv()`. Emplee un objeto llamado `base_motivacion` para alojar a los datos abiertos.
+
+```{r}
+
+# Instrucciones: Pegue o escriba los códigos utilizados en las siguientes 
+#                líneas [no coloque el signo gato antes de su respuesta]
+#                Una vez terminado su código, borre estos comentarios.
+
+```
+
+## Ejercicio 2. Vista previa de a los datos.
+
+- **¿Cuántas variables, y cuántos casos posee la base de datos original?**
+- Indique su respuesta bajo el código.
+
+```{r}
+
+# Instrucciones: Escriba aqui un comando para obtener la 
+#                cantidad de variables, y de casos observados
+#                de la base de datos empleada. Se sugiere emplear
+#                dplyr::glimpse()
+
+```
+
+- Respuesta 
+  + Casos: [escribir aqui la cantidad de casos, y borrar los corchetes]
+  + Variables: [escribir aqui la cantidad de variables, y borrar los corchetes]
+
+
+## Ejercicio 3. Generar muestra aleatoria
+
+- Al igual que en la tarea 1, queremos que se produzcan resultados que sean únicos para cada uno de ustedes. De esta forma, les solicitamos que generen una muestra de datos que sea única a su rut. En esta sección solo tendra que reemplazar el valor de `set.seed()`, de modo que se genere una muestra de datos que fuera única. Recuerde que **todos los ejercicios** siguentes, **requieren** que **se emplen los datos generados**.
+
+
+```{r}
+
+# Instrucciones: reemplaze el valor 123456789 "set.seed()", e incluya su RUT
+#                como argumento para fijar seed.
+#                Genere la muestra aleatoria solicitada.
+#                Esta muestra contiene el 50% de los datos originales.
+
+set.seed(123456789)     # solo reemplazar el set.seed, y conservar el resto del código.
+library(dplyr)
+data_mot <- dplyr::slice_sample(base_motivacion, prop = .5, by = suc)
+
+
+```
+
+
+
+## Ejercicio 4. Crear una variable con los puntajes totales de Comprimiso.
+
+- Empleando las respuestas a las tres preguntas (eng1, eng2 y eng3) de Compromiso (Engagement). Guarde los puntajes totales en una variable llamada "eng".
+
+- Revise el texto de cada afirmación, y discrime que item habria que invertir.
+
+```
+
+eng1   En mi trabajo me siento lleno de energía.
+eng2   Soy entusiasta sobre mi trabajo.
+eng3   Me cuesta meterme de lleno en mi trabajo.
+
+```
+
+- Inserte los códigos utilizados para crear la variable Engagement a partir de los ítems eng1, eng2 y eng3 que son parte del instrumento usado para estudiar esta variable. (Recuerde revisar si hay ítems inversos e invertirlos si corresponde).
+
+
+```{r}
+
+# Instrucciones: los códigos utilizados en la siguiente línea [no coloque el signo gato antes de su respuesta]
+
+```
+
+## Ejercicio 5. Diagrama de dispersión entre la variable compromiso y la variable edad (age).
+
+
+- Inserte los códigos utilizados para generar un gráfico de dispersión de las dos variables indicadas.
+
+- En el mismo gráfico incluya una linea que muestre el promedio de la variable de respuesta.
+
+```{r}
+
+# Instrucciones: los códigos utilizados en la siguiente línea [no coloque el signo gato antes de su respuesta]
+
+# Recomendaciones: para agregar una linea al gráfico puede  
+#                  utilizar el comando "abline()".
+
+```
+
+
+## Ejercicio 6. Regresión lineal simple prediciendo la variable compromiso en base al predictor Edad (age)
+
+- Inserte los códigos utilizados para realizar una regresión lineal utilizando la variable compromiso como variable de respuesta y la variable Edad (age) como variable predictora.
+
+```{r}
+
+# Instrucciones: los códigos utilizados en la siguiente línea [no coloque el signo gato antes de su respuesta]
+
+```
+
+## Ejercicio 7. Reporte los resultados de la regresión.
+
+- Indique los valores de los siguientes resultados en el modelo de regresión:
+
+- **Respuesta**
+
+  + El coeficiente del intercepto es: `#....indicar su respuesta en esta línea, y borrar este comentario.`
+
+  + El coeficiente de la pendiente es: `#....indicar su respuesta en esta línea, y borrar este comentario.`
+
+  + La desviación estándar de los residuos es: `#....indicar su respuesta en esta línea, y borrar este comentario.`
+
+  + El coeficiente de determinación (r cuadrado) es: `#....indicar su respuesta en esta línea, y borrar este comentario.`
+
+
+
+## Ejercicio 9. Graficar la recta de regresión
+
+- Genere un nuevo diagrama de dispersión entre la variable compromiso y la variable edad (age).
+
+- En el mismo gráfico use los coeficientes de intercepto y pendiente para mostrar la recta de regresión que estimo en el ejercicio anterior.
+
+```{r}
+
+# Instrucciones: los códigos utilizados en la siguiente línea [no coloque el signo gato antes de su respuesta]
+
+
+# Recomendaciones: para agregar una linea al gráfico puede  
+#                  utilizar el comando "abline()".
+
+```
+
+
+## Ejercicio 10. Interprete la desviación estándar de los residuos y el coeficiente de determinación
+
+- **Respuesta**
+
+  + La desviación estándar de los residuos me indica qué: `#....indicar su respuesta en esta línea, y borrar este comentario.`
+
+  + El coeficiente de determinación (r cuadrado) me indica qué: `#....indicar su respuesta en esta línea, y borrar este comentario.`
+
+
+
+## Ejercicio 11. Repetir la regresión usando variables estandarizadas.
+
+- Inserte los códigos para convertir a puntaje Z la variable Compromiso (*engagement*) y guardela en la variable `eng_z`.
+
+- Convierta a puntaje Z la variable edad (age) y guardela en la variable `age_z`.
+
+- - Inserte los códigos utilizados para realizar una regresión lineal utilizando la variable eng_z como variable de respuesta y la variable age_z como variable predictora.
+
+```{r}
+
+# Pegue los códigos utilizados en la siguiente línea [no coloque el signo gato antes de su respuesta]
+
+
+```
+
