@@ -79,7 +79,7 @@ base_motivacion_laboral_codebook.xlsx
 #                Genere la muestra aleatoria solicitada.
 #                Esta muestra contiene el 50% de los datos originales.
 
-set.seed(123456789)     # solo reemplazar el set.seed, y conservar el resto del código.
+set.seed(123456789) # Reemplazar el set.seed, y conservar el resto del código.
 library(dplyr)
 data_mot <- dplyr::slice_sample(base_motivacion, prop = .5, by = suc)
 
@@ -90,9 +90,9 @@ data_mot <- dplyr::slice_sample(base_motivacion, prop = .5, by = suc)
 
 ## Ejercicio 4. Crear una variable con los puntajes totales de Comprimiso.
 
-- Empleando las respuestas a las tres preguntas (eng1, eng2 y eng3) de Compromiso (Engagement). Guarde los puntajes totales en una variable llamada "eng".
+- Empleando las respuestas a las tres preguntas (eng1, eng2 y eng3), genere una variable llamada `eng`. Esta variable creada representa al atributo "Compromiso" o "Engagement". En el resto de la tarea, llamaremos a esta variable "Compromiso".
 
-- Revise el texto de cada afirmación, y discrime que item habria que invertir.
+- Revise el texto de cada afirmación, de los items eng1, eng2 y eng3 y discrime que item habría que invertir.
 
 ```
 
@@ -102,7 +102,7 @@ eng3   Me cuesta meterme de lleno en mi trabajo.
 
 ```
 
-- Inserte los códigos utilizados para crear la variable Engagement a partir de los ítems eng1, eng2 y eng3 que son parte del instrumento usado para estudiar esta variable. (Recuerde revisar si hay ítems inversos e invertirlos si corresponde).
+- Inserte los códigos utilizados para crear la variable `eng` a partir de los ítems eng1, eng2 y eng3 que son parte del instrumento usado para estudiar esta variable (Recuerde revisar si hay ítems inversos e invertirlos si corresponde).
 
 
 ```{r}
@@ -111,12 +111,12 @@ eng3   Me cuesta meterme de lleno en mi trabajo.
 
 ```
 
-## Ejercicio 5. Diagrama de dispersión entre la variable compromiso y la variable edad (age).
+## Ejercicio 5. Diagrama de dispersión entre la variable Compromiso (`eng`) y la variable edad (`age`).
 
 
 - Inserte los códigos utilizados para generar un gráfico de dispersión de las dos variables indicadas.
 
-- En el mismo gráfico incluya una linea que muestre el promedio de la variable de respuesta.
+- En el mismo gráfico incluya una línea que muestre el promedio de la variable de respuesta.
 
 ```{r}
 
@@ -128,9 +128,9 @@ eng3   Me cuesta meterme de lleno en mi trabajo.
 ```
 
 
-## Ejercicio 6. Regresión lineal simple prediciendo la variable compromiso en base al predictor Edad (age)
+## Ejercicio 6. Regresión lineal simple prediciendo la variable compromiso (eng)en base al predictor Edad (age)
 
-- Inserte los códigos utilizados para realizar una regresión lineal utilizando la variable compromiso como variable de respuesta y la variable Edad (age) como variable predictora.
+- Inserte los códigos utilizados para realizar una regresión lineal utilizando la variable compromiso (eng) como variable de respuesta y la variable Edad (age) como variable predictora.
 
 ```{r}
 
